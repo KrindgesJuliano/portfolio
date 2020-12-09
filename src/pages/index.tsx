@@ -1,16 +1,19 @@
-import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import styles from "../../styles/Home.module.css";
+
+import Header from "../components/Header";
+import SEO from "../components/SEO";
 
 export default function Home() {
   return (
     <div className={styles.container}>
-      <Head>
-        <title>Juliano Krindges</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
+      <SEO
+        title="Juliano Krindges"
+        description="Freelancer Web Developer"
+        shouldExcludeTitleSuffix
+        image="Screenshot_3.png"
+      ></SEO>
+      <Header />
       <main className={styles.main}>
-        <header>Juliano Krindges</header>
         <section>main section</section>
         <section>Project section</section>
         <section>work section</section>

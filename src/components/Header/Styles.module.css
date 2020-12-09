@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-self: center;
+  width: 100%;
+  height: 4.5rem;
+}
+
+.logo {
+  color: #ff6768;
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+}
