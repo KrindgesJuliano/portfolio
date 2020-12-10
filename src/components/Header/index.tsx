@@ -9,9 +9,15 @@ export default function Header() {
         <h2 className={styles.logo}>Juliano Krindges</h2>
       </div>
       <div className={styles.iconContainer}>
-        <FiGithub color="red" size={30} />
-        <FiLinkedin color="red" size={30} />
-        <FiCodepen color="red" size={30} />
+        <a href="https://github.com/KrindgesJuliano">
+          <FiGithub color="red" size={30} />
+        </a>
+        <a href="https://www.linkedin.com/in/juliano-krindges-m-pinheiro-ab526b52/">
+          <FiLinkedin color="red" size={30} />
+        </a>
+        <a href="#">
+          <FiCodepen color="red" size={30} />
+        </a>
       </div>
     </header>
   );

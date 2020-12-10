@@ -12,3 +12,11 @@
   font-family: Montserrat, sans-serif;
   font-weight: 400;
 }
+
+.iconContainer {
+  width: 13rem;
+  max-width: 18.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+}
