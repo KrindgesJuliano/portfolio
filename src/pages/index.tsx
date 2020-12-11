@@ -1,8 +1,7 @@
 import styles from "../../styles/Home.module.css";
 
 import Header from "../components/Header";
-import SectionLayout from "../components/SectionLayout";
-
+import MainSection from "../components/MainSection";
 import SEO from "../components/SEO";
 
 export default function Home() {
@@ -16,9 +15,8 @@ export default function Home() {
       ></SEO>
       <Header />
       <main className={styles.main}>
-        <SectionLayout style={{ border: "solid 1px red" }}>
-          main section
-        </SectionLayout>
+        <MainSection />
+
         <section>Project section</section>
         <section>work section</section>
         <section>contact section</section>

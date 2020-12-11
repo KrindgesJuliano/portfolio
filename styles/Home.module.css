@@ -1,7 +1,7 @@
 .container {
   min-height: 100vh;
   padding: 0 0.5rem;
-  max-width: 1170px;
+  /* max-width: 1170px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
