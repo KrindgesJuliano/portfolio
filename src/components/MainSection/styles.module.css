@@ -1,0 +1,29 @@
+.section {
+  display: flex;
+  background-color: #e8e8e8;
+  height: 100vh;
+  width: 100%;
+  /* top: 8rem; */
+  /* position: absolute; */
+}
+
+.sectionContainer {
+  display: flex;
+  width: 70rem;
+  margin: 0 auto;
+}
+
+.imageHeroContainer {
+  width: 50%;
+  height: 100%;
+  position: relative;
+  /* border: solid 1px red; */
+}
+
+.leftContainer {
+  width: 50%;
+}
+
+.textContainer {
+  padding-top: 7rem;
+}
