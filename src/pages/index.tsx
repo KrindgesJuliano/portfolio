@@ -2,6 +2,7 @@ import styles from "../../styles/Home.module.css";
 
 import Header from "../components/Header";
 import MainSection from "../components/MainSection";
+import ProjectSection from "@/components/ProjectSection";
 import SEO from "../components/SEO";
 
 export default function Home() {
@@ -16,8 +17,7 @@ export default function Home() {
       <Header />
       <main className={styles.main}>
         <MainSection />
-
-        <section>Project section</section>
+        <ProjectSection />
         <section>work section</section>
         <section>contact section</section>
       </main>
