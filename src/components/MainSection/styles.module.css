@@ -1,10 +1,9 @@
 .section {
   display: flex;
-  background-color: #e8e8e8;
   height: 100vh;
   width: 100%;
-  /* top: 8rem; */
-  /* position: absolute; */
+  top: -9.5rem;
+  position: relative;
 }
 
 .sectionContainer {
@@ -14,16 +13,52 @@
 }
 
 .imageHeroContainer {
-  width: 50%;
+  width: 40rem;
   height: 100%;
-  position: relative;
+  position: absolute;
+  right: 0;
   /* border: solid 1px red; */
+  clip-path: url(#svgPath);
 }
 
 .leftContainer {
   width: 50%;
+  overflow: hidden;
 }
 
 .textContainer {
   padding-top: 7rem;
+}
+
+.mainText {
+  font-size: 3rem;
+  margin-bottom: 0;
+}
+
+.highlightText {
+  color: #f05454;
+  font-weight: 400;
+}
+
+.navigationMenu {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+.navigationItem {
+  text-decoration: none;
+  max-width: 10rem;
+}
+
+.navigationItem:hover {
+  color: #f05454;
+}
+
+.verticalLine {
+  margin-left: 5px;
+  height: 15rem;
+  max-width: 1px;
+  background-color: #17223b;
 }

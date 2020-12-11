@@ -5,6 +5,7 @@
   align-self: center;
   width: 70rem;
   height: 4.5rem;
+  z-index: 1;
 }
 
 .logo {

@@ -10,13 +10,13 @@ export default function Header() {
       </div>
       <div className={styles.iconContainer}>
         <a href="https://github.com/KrindgesJuliano">
-          <FiGithub color="red" size={30} />
+          <FiGithub color="white" size={30} />
         </a>
         <a href="https://www.linkedin.com/in/juliano-krindges-m-pinheiro-ab526b52/">
-          <FiLinkedin color="red" size={30} />
+          <FiLinkedin color="white" size={30} />
         </a>
         <a href="#">
-          <FiCodepen color="red" size={30} />
+          <FiCodepen color="white" size={30} />
         </a>
       </div>
     </header>
