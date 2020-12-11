@@ -4,8 +4,8 @@ import style from "./styles.module.css";
 
 interface Props {
   children: React.ReactNode;
-  style?: object;
-  className?: object;
+  style?: React.CSSProperties;
+  className?: string;
 }
 
 export const SectionLayout = ({
