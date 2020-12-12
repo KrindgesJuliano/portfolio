@@ -24,8 +24,10 @@
   position: relative;
   border-radius: 8px;
   top: 10%;
+  overflow: hidden;
 }
 
 .img {
   border-radius: 8px;
+  object-fit: contain;
 }

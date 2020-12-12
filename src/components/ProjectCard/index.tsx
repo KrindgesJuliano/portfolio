@@ -12,12 +12,10 @@ const ProjectCard = ({ imgSrc }: Props) => {
     <a href="#" className={styles.link}>
       <div className={styles.container}>
         <div className={styles.imgContainer}>
-          <Image
-            src={imgSrc}
-            layout="fill"
-            objectFit="cover"
-            loading="lazy"
-            className={styles.img}
+          <img
+            src={require("../../../public/home_hero.jpg")}
+            alt="código java script"
+            width="500px"
           />
         </div>
       </div>

@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import MainSection from "../components/MainSection";
 import ProjectSection from "@/components/ProjectSection";
 import SEO from "../components/SEO";
+import ContactSection from "@/components/ContactSection";
 
 export default function Home() {
   return (
@@ -18,7 +19,7 @@ export default function Home() {
       <main className={styles.main}>
         <MainSection />
         <ProjectSection />
-        <section>work section</section>
+        <ContactSection />
         <section>contact section</section>
       </main>
 

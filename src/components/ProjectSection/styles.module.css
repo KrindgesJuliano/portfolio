@@ -57,7 +57,7 @@
 .seeMore {
   display: flex;
   margin-top: 2rem;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
 }
 

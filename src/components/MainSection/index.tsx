@@ -46,11 +46,10 @@ export const MainSection = (props: Props) => {
           </nav>
         </div>
         <div className={styles.imageHeroContainer}>
-          <Image
-            src="/home_hero.jpg"
+          <img
+            src={require("../../../public/home_hero.jpg")}
             alt="código java script"
-            layout="fill"
-            objectFit="cover"
+            width="1500px"
           />
         </div>
       </div>
