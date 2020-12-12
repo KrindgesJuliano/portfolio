@@ -3,6 +3,7 @@ import { FiChevronRight } from "react-icons/fi";
 
 import styles from "./styles.module.css";
 import SectionLayout from "../SectionLayout";
+import ProjectCard from "../ProjectCard";
 
 interface Props {}
 
@@ -14,35 +15,10 @@ export const ProjectSection = (props: Props) => {
         <div className={styles.sectionContainer}>
           <h2 className={styles.sectionTitle}>Projetos</h2>
           <div className={styles.projectsGrid}>
-            <div
-              style={{
-                width: "100%",
-                height: "100%",
-                border: "1px solid red",
-              }}
-            ></div>
-            <div
-              style={{
-                width: "100%",
-                height: "100%",
-                border: "1px solid red",
-                background: "black",
-              }}
-            ></div>
-            <div
-              style={{
-                width: "100%",
-                height: "100%",
-                border: "1px solid red",
-              }}
-            ></div>
-            <div
-              style={{
-                width: "100%",
-                height: "100%",
-                border: "1px solid red",
-              }}
-            ></div>
+            <ProjectCard imgSrc="/home_hero.jpg" />
+            <ProjectCard imgSrc="/home_hero.jpg" />
+            <ProjectCard imgSrc="/home_hero.jpg" />
+            <ProjectCard imgSrc="/home_hero.jpg" />
           </div>
           <div className={styles.seeMore}>
             <a href="#">Veja Mais</a>
