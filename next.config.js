@@ -1,13 +1,13 @@
-module.exports = {
-  exportPathMap: async function (
-    defaultPathMap,
-    { dev, dir, outDir, distDir, buildId }
-  ) {
-    return {
-      "/src": { page: "/src" },
-    };
-  },
-};
+// module.exports = {
+//   exportPathMap: async function (
+//     defaultPathMap,
+//     { dev, dir, outDir, distDir, buildId }
+//   ) {
+//     return {
+//       "/src": { page: "/src" },
+//     };
+//   },
+// };
 
 const withOptimizedImages = require("next-optimized-images");
 
