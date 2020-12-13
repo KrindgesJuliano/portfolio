@@ -36,10 +36,10 @@ export const MainSection = (props: Props) => {
           </div>
           <div className={styles.verticalLine}></div>
           <nav className={styles.navigationMenu}>
-            <a href="#" className={styles.navigationItem}>
+            <a href="#projects" className={styles.navigationItem}>
               Projetos
             </a>
-            <a href="#" className={styles.navigationItem}>
+            <a href="#contact" className={styles.navigationItem}>
               Contato
             </a>
           </nav>
@@ -49,6 +49,7 @@ export const MainSection = (props: Props) => {
             src={require("../../../public/home_hero.jpg")}
             alt="código java script"
             width="1500px"
+            height="100%"
           />
         </div>
       </div>

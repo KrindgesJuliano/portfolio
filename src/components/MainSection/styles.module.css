@@ -13,13 +13,14 @@
 }
 
 .imageHeroContainer {
-  width: 40rem;
+  width: 45rem;
   height: 100%;
   position: absolute;
   right: 0;
   overflow: hidden;
   /* border: solid 1px red; */
-  clip-path: url(#svgPath);
+  /* clip-path: url(#svgPath); */
+  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0 67%);
 }
 
 .leftContainer {

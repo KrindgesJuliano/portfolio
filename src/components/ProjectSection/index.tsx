@@ -10,7 +10,7 @@ interface Props {}
 export const ProjectSection = (props: Props) => {
   return (
     <SectionLayout className={styles.section}>
-      <div className={styles.background}>
+      <div className={styles.background} id="projects">
         <div className={styles.backgroundGeometry}></div>
         <div className={styles.sectionContainer}>
           <h2 className={styles.sectionTitle}>Projetos</h2>

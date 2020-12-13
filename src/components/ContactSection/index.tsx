@@ -10,7 +10,7 @@ interface Props {}
 const ContactSection = (props: Props) => {
   return (
     <SectionLayout className={styles.section}>
-      <div className={styles.sectionContainer}>
+      <div className={styles.sectionContainer} id="contact">
         <h2 className={styles.sectionTitle}>Entre em contato</h2>
         <div className={styles.contactContainer}>
           <div className={styles.formContainer}>
