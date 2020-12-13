@@ -20,7 +20,6 @@ export default function Home() {
         <MainSection />
         <ProjectSection />
         <ContactSection />
-        <section>contact section</section>
       </main>
 
       <footer className={styles.footer}>

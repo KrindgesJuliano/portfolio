@@ -1,5 +1,4 @@
 // import React from "react";
-import Image from "next/image";
 
 import SectionLayout from "../SectionLayout";
 
@@ -16,8 +15,8 @@ export const MainSection = (props: Props) => {
             <path
               fill="#FFFFFF"
               stroke="#000000"
-              stroke-width="1.5794"
-              stroke-miterlimit="10"
+              // stroke-width="1.5794"
+              // stroke-miterlimit="10"
               d="M271.38 0H688.508V840H178.626L23.8596 629.395C-10.5918 590.179 
               -1.58135 549.51 12.7292 518.04C27.0398 486.571 271.38 0 271.38 0Z"
             />
