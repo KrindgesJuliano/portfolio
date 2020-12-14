@@ -64,3 +64,42 @@
   max-width: 1px;
   background-color: #17223b;
 }
+.iconContainer {
+  display: none;
+}
+
+@media screen and (max-width: 400px) {
+  .imageHeroContainer {
+    display: none;
+  }
+
+  .sectionContainer {
+    display: flex;
+    margin: 0 auto;
+    background-image: linear-gradient(
+      340deg,
+      rgba(240, 84, 84, 0.7) 6.35%,
+      rgba(18, 2, 107, 0.7) 93.31%
+    );
+    padding: 0 0.7rem;
+  }
+
+  .leftContainer {
+    width: 100%;
+  }
+
+  .mainText {
+    font-size: 1.8rem;
+    margin-bottom: 0;
+    color: white;
+  }
+
+  .iconContainer {
+    margin-top: 1rem;
+    width: 13rem;
+    max-width: 18.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+  }
+}

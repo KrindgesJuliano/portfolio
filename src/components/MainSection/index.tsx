@@ -1,4 +1,5 @@
-// import React from "react";
+import React from "react";
+import { FiGithub, FiLinkedin, FiCodepen } from "react-icons/fi";
 
 import SectionLayout from "../SectionLayout";
 
@@ -42,6 +43,17 @@ export const MainSection = (props: Props) => {
             <a href="#contact" className={styles.navigationItem}>
               Contato
             </a>
+            <div className={styles.iconContainer}>
+              <a href="https://github.com/KrindgesJuliano">
+                <FiGithub color="white" size={30} />
+              </a>
+              <a href="https://www.linkedin.com/in/juliano-krindges-m-pinheiro-ab526b52/">
+                <FiLinkedin color="white" size={30} />
+              </a>
+              <a href="#">
+                <FiCodepen color="white" size={30} />
+              </a>
+            </div>
           </nav>
         </div>
         <div className={styles.imageHeroContainer}>

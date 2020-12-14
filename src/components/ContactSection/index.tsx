@@ -48,6 +48,7 @@ const ContactSection = (props: Props) => {
                   Enviar Mensagem <FiArrowRight />
                 </button>
               </p>
+              <input type="hidden" name="form-contact" value="contact" />
             </form>
           </div>
           <div className={styles.contactInfo}>
