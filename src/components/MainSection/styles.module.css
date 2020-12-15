@@ -11,6 +11,7 @@
   width: 70rem;
   margin: 0 auto;
   flex-wrap: wrap;
+  padding: 0 1rem;
 }
 
 .imageHeroContainer {
