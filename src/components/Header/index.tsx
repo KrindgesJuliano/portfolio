@@ -16,7 +16,7 @@ export default function Header() {
           <a href="https://www.linkedin.com/in/juliano-krindges-m-pinheiro-ab526b52/">
             <FiLinkedin color="white" size={30} />
           </a>
-          <a href="#">
+          <a href="https://codepen.io/Falt">
             <FiCodepen color="white" size={30} />
           </a>
         </div>
