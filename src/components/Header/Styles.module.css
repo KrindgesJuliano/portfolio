@@ -1,12 +1,15 @@
+.header {
+  z-index: 1;
+}
+
 .container {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-self: center;
   width: 70rem;
   height: 4.5rem;
-  z-index: 1;
+  padding: 0 1rem;
+  flex: content;
 }
 
 .logo {
