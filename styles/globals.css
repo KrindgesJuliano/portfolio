@@ -7,6 +7,16 @@ body {
   background-color: #e8e8e8;
   color: #17223b;
   scroll-behavior: smooth;
+  font-size: 1em;
+}
+
+:root {
+  --clr-background-200: #e8e8e8;
+  --clr-primary-300: #6b778d;
+  --clr-primary-400: #263859;
+  --clr-neutral-500: #17223b;
+
+  --clr-assent-500: #ff6768;
 }
 
 a {
