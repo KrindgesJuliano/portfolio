@@ -1,35 +1,34 @@
 .section {
-  display: flex;
   height: 100vh;
   width: 100%;
-  top: -4.5rem;
-  position: relative;
+}
+
+.backgroundContainer {
+  background: url("/background.svg") no-repeat;
+  background-size: max(70rem, 100%);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
 }
 
 .sectionContainer {
   display: flex;
-  width: 70rem;
+  width: min(70rem, 90%);
   margin: 0 auto;
-}
-
-.imageHeroContainer {
-  width: 45rem;
-  height: 100%;
-  position: absolute;
-  right: 0;
-  overflow: hidden;
-  /* border: solid 1px red; */
-  /* clip-path: url(#svgPath); */
-  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0 67%);
+  flex-wrap: wrap;
+  padding: 0 1rem;
+  z-index: 1;
 }
 
 .leftContainer {
-  width: 50%;
+  width: 100%;
   overflow: hidden;
 }
 
 .textContainer {
   padding-top: 7rem;
+  color: white;
 }
 
 .mainText {
@@ -62,5 +61,44 @@
   margin-left: 5px;
   height: 15rem;
   max-width: 1px;
-  background-color: #17223b;
+  background-color: black;
+}
+.iconContainer {
+  display: none;
+}
+
+@media screen and (max-width: 400px) {
+  .imageHeroContainer {
+    display: none;
+  }
+
+  .sectionContainer {
+    display: flex;
+    margin: 0 auto;
+    background-image: linear-gradient(
+      340deg,
+      rgba(240, 84, 84, 0.7) 6.35%,
+      rgba(18, 2, 107, 0.7) 93.31%
+    );
+    padding: 0 0.7rem;
+  }
+
+  .leftContainer {
+    width: 100%;
+  }
+
+  .mainText {
+    font-size: 1.8rem;
+    margin-bottom: 0;
+    color: white;
+  }
+
+  .iconContainer {
+    margin-top: 1rem;
+    width: 13rem;
+    max-width: 18.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+  }
 }

@@ -1,19 +1,19 @@
 .section {
-  display: flex;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
-  top: -4.5rem;
 
-  position: relative;
+  overflow: hidden;
 }
 
 .sectionContainer {
   display: flex;
-  width: 70rem;
+  max-width: 70rem;
   height: 100%;
   margin: 0 auto;
+  padding: 1rem;
   flex-direction: column;
   z-index: 1;
+  /* flex-wrap: wrap; */
 }
 
 .background {
@@ -34,7 +34,8 @@
 .sectionTitle {
   color: #f05454;
   font-size: 3rem;
-  width: 20rem;
+  max-width: 20rem;
+  z-index: 1;
 }
 
 .sectionTitle::after {
@@ -42,17 +43,17 @@
   display: block;
   margin-top: 3px;
   height: 0.4rem;
-  width: 8rem;
+  max-width: 8rem;
   background-color: #f05454;
 }
 
 .projectsGrid {
   z-index: 1;
   display: grid;
-  grid-template-columns: 49% 49%;
-  grid-template-rows: 20rem 20rem;
-  column-gap: 1.5rem;
-  row-gap: 1.5rem;
+  grid-template-columns: repeat(2, minmax(20rem, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(10rem, auto));
+  column-gap: 2%;
+  row-gap: 2%;
 }
 
 .seeMore {
@@ -70,4 +71,29 @@
 
 .seeMore a:hover {
   color: #f05454;
+}
+
+@media screen and (max-width: 400px) {
+  .backgroundGeometry {
+    display: none;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+
+  .sectionTitle::after {
+    width: 4rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .projectsGrid {
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(1, minmax(20rem, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(10rem, auto));
+    column-gap: 2%;
+    row-gap: 2%;
+  }
 }

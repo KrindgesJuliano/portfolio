@@ -1,11 +1,17 @@
+.header {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  width: min(90%, 70rem);
+}
+
 .container {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-self: center;
-  width: 70rem;
   height: 4.5rem;
-  z-index: 1;
+  padding: 0 1rem;
+  flex: auto;
 }
 
 .logo {
@@ -20,4 +26,24 @@
   display: flex;
   justify-content: space-between;
   align-self: center;
+}
+
+.iconContainer a {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 400px) {
+  .container {
+    max-width: 20rem;
+  }
+
+  .iconContainer {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .iconContainer {
+    display: none;
+  }
 }
