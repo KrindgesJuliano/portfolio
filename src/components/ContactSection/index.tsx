@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SectionLayout from "../SectionLayout";
 
 import { FiArrowRight, FiPhone, FiMail, FiMapPin } from "react-icons/fi";
@@ -8,13 +8,26 @@ import styles from "./styles.module.css";
 interface Props {}
 
 const ContactSection = (props: Props) => {
+  const [success, setSuccess] = useState(false);
+  useEffect(() => {
+    if (window.location.search.includes("success=true")) {
+      setSuccess(true);
+    }
+  }, []);
+
   return (
     <SectionLayout className={styles.section}>
       <div className={styles.sectionContainer} id="contact">
         <h2 className={styles.sectionTitle}>Entre em contato</h2>
         <div className={styles.contactContainer}>
           <div className={styles.formContainer}>
-            <form name="contact" method="POST" data-netlify="true">
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              action="/?success=true"
+            >
+              <input type="hidden" name="form-contact" value="contact" />
               <p>
                 <input
                   type="text"
@@ -48,8 +61,10 @@ const ContactSection = (props: Props) => {
                   Enviar Mensagem <FiArrowRight />
                 </button>
               </p>
-              <input type="hidden" name="form-contact" value="contact" />
             </form>
+            {success && (
+              <p style={{ color: "green" }}>Successfully submitted form!</p>
+            )}
           </div>
           <div className={styles.contactInfo}>
             <p>
