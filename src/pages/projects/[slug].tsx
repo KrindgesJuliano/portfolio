@@ -27,7 +27,7 @@ export const getStaticProps: GetStaticProps<ProjectsProps> = async (
 ) => {
   const { slug } = context.params;
 
-  const projects = await client().getByUID("Projects", String(slug), {});
+  const projects = await client().getByUID("projetos", String(slug), {});
 
   return {
     props: {

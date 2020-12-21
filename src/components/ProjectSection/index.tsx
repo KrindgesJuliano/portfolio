@@ -1,9 +1,6 @@
 import React from "react";
-import { client } from "@/lib/prismic";
-import Prismic from "prismic-javascript";
 import { Document } from "prismic-javascript/types/documents";
-import { GetServerSideProps, GetStaticProps } from "next";
-import PrismicDOM from "prismic-dom";
+
 import { FiChevronRight } from "react-icons/fi";
 import Link from "next/link";
 
@@ -16,7 +13,6 @@ interface Props {
 }
 
 export const ProjectSection = ({ projects }: Props) => {
-  // console.log(projects);
   return (
     <SectionLayout className={styles.section}>
       <div className={styles.background} id="projects">
@@ -25,11 +21,14 @@ export const ProjectSection = ({ projects }: Props) => {
           <h2 className={styles.sectionTitle}>Projetos</h2>
           <div className={styles.projectsGrid}>
             {projects.map((projects) => {
+              console.log(projects);
               return (
                 <div key={projects.id}>
                   <Link href={`/projects/${projects.uid}`}>
                     <a>
-                      <ProjectCard imgSrc={projects.data.Thumbnail} />
+                      <ProjectCard
+                        imgSrc={projects.data.thumbnail.preview.url}
+                      />
                     </a>
                   </Link>
                 </div>
@@ -44,20 +43,6 @@ export const ProjectSection = ({ projects }: Props) => {
       </div>
     </SectionLayout>
   );
-};
-
-export const getStaticProps: GetServerSideProps<Props> = async () => {
-  const projects = await client().query([
-    Prismic.Predicates.at("document.type", "projetos"),
-  ]);
-
-  console.log(projects.results[0].data);
-
-  return {
-    props: {
-      projects: projects.results,
-    },
-  };
 };
 
 export default ProjectSection;

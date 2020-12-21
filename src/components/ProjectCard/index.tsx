@@ -12,7 +12,13 @@ interface Props {
 const ProjectCard = ({ imgSrc, id, Title }: Props) => {
   return (
     <div className={styles.imgContainer}>
-      <img src={imgSrc} alt={Title} width="500px" className={styles.img} />
+      <img
+        src={imgSrc}
+        alt={Title}
+        width="200px"
+        height="300px"
+        className={styles.img}
+      />
     </div>
   );
 };
