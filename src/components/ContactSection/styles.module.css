@@ -1,21 +1,23 @@
 .section {
   display: flex;
-  height: 80vh;
+  height: auto;
   width: 100%;
 
   background: url("/contactBG.svg") no-repeat;
   background-size: cover;
+  flex-wrap: wrap;
 }
 
 .sectionContainer {
   display: flex;
   width: min(90%, 70rem);
-  height: 100%;
+  height: auto;
   margin: 0 auto;
   flex-direction: column;
   z-index: 1;
   align-items: center;
   padding: 0 1rem;
+  /* flex-wrap: wrap; */
 }
 
 .formContainer {
@@ -138,14 +140,14 @@
     background-color: #f05454;
     border-radius: 0 0 8px 8px;
     width: min(30rem, 100%);
-    height: 90%;
+    height: auto;
     margin: 0 auto;
     font-size: 1rem;
   }
 
   .formContainer {
     width: min(100%, 30rem);
-    height: 90%;
+    height: auto;
     border-radius: 8px 8px 0 0;
     margin: 0 auto;
   }

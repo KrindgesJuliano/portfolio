@@ -68,7 +68,7 @@
 }
 
 @media screen and (max-width: 400px) {
-  .imageHeroContainer {
+  .backgroundContainer {
     display: none;
   }
 
@@ -81,6 +81,7 @@
       rgba(18, 2, 107, 0.7) 93.31%
     );
     padding: 0 0.7rem;
+    width: min(70rem, 100%);
   }
 
   .leftContainer {
