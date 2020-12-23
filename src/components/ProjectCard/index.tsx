@@ -4,12 +4,11 @@ import React from "react";
 import styles from "./styles.module.css";
 
 interface Props {
-  imgSrc?: string;
-  id?: string;
+  imgSrc: string;
   Title?: string;
 }
 
-const ProjectCard = ({ imgSrc, id, Title }: Props) => {
+const ProjectCard = ({ imgSrc, Title }: Props) => {
   return (
     <div className={styles.imgContainer}>
       <img

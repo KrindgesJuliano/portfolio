@@ -43,8 +43,6 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
     Prismic.Predicates.at("document.type", "projetos"),
   ]);
 
-  console.log(projects);
-
   return {
     props: {
       projects: projects ? projects.results : [],
