@@ -1,0 +1,19 @@
+.container {
+  max-width: 70rem;
+  margin: 0 auto;
+}
+
+.main {
+  margin-top: 2rem;
+  border-radius: 8px;
+  background-color: white;
+}
+.imgCover {
+  object-fit: cover;
+  height: 20rem;
+}
+
+.title {
+  text-align: center;
+  font-weight: 700;
+}
