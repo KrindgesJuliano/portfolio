@@ -8,7 +8,7 @@ interface Props {
 }
 
 export default function Header({ style: userStyles = {}, className }: Props) {
-  const classNames = [styles.section, className].join(" ").trim();
+  const classNames = [styles.header, className].join(" ").trim();
   return (
     <header style={userStyles} className={classNames}>
       <div className={styles.container}>
