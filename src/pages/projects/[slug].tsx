@@ -5,8 +5,8 @@ import { client } from "@/lib/prismic";
 import PrismicDOM from "prismic-dom";
 
 import Header from "../../components/Header";
-import styles from "../../../styles/projectPost.module.css";
-import styleFooter from "../../../styles/Home.module.css";
+import styles from "../../styles/projectPost.module.css";
+import styleFooter from "../../styles/Home.module.css";
 
 interface ProjectsProps {
   project: Document;

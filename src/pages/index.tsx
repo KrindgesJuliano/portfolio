@@ -9,7 +9,7 @@ import MainSection from "../components/MainSection";
 import ProjectSection from "@/components/ProjectSection";
 import SEO from "../components/SEO";
 
-import styles from "../../styles/Home.module.css";
+import styles from "../styles/Home.module.css";
 
 interface Props {
   projects: Document[];
