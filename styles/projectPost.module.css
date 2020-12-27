@@ -1,6 +1,6 @@
 .container {
   max-width: 70rem;
-  margin: 0 auto;
+  margin: 6rem auto;
   min-height: 100vh;
 }
 
@@ -23,8 +23,8 @@
   flex-wrap: wrap;
 }
 .articleBody {
-  padding: 5rem;
-  text-indent: 1rem;
+  padding: 0 5rem;
+  text-indent: 2rem;
   line-height: 2rem;
   font-size: 1rem;
   text-align: justify;
@@ -36,6 +36,7 @@
 
 .linkSection {
   display: flex;
+  height: 10rem;
   justify-content: center;
   border-top: 1px solid #6b778d;
 }

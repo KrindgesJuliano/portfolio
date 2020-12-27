@@ -12,6 +12,8 @@
   height: 4.5rem;
   padding: 0 1rem;
   flex: auto;
+  max-width: 70rem;
+  margin: 0 auto;
 }
 
 .logo {
@@ -30,6 +32,10 @@
 
 .iconContainer a {
   cursor: pointer;
+}
+
+.linkLogo {
+  text-decoration: none;
 }
 
 @media screen and (max-width: 400px) {

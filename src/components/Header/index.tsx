@@ -1,4 +1,5 @@
 import { FiGithub, FiLinkedin, FiCodepen } from "react-icons/fi";
+import Link from "next/link";
 
 import styles from "./Styles.module.css";
 
@@ -13,7 +14,11 @@ export default function Header({ style: userStyles = {}, className }: Props) {
     <header style={userStyles} className={classNames}>
       <div className={styles.container}>
         <div>
-          <h2 className={styles.logo}>Juliano Krindges</h2>
+          <h2 className={styles.logo}>
+            <Link href={`/`}>
+              <a className={styles.linkLogo}>Juliano Krindges</a>
+            </Link>
+          </h2>
         </div>
         <div className={styles.iconContainer}>
           <a href="https://github.com/KrindgesJuliano">
