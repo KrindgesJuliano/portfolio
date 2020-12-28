@@ -85,6 +85,6 @@ export const getStaticProps: GetStaticProps<ProjectsProps> = async (
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [],
-    fallback: true,
+    fallback: false,
   };
 };
