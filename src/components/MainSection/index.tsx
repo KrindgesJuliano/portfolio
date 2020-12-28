@@ -22,14 +22,16 @@ export const MainSection = (props: Props) => {
               <span className={styles.highlightText}>&</span> Web Designer
             </h2>
           </div>
-          <div className={styles.verticalLine}></div>
-          <nav className={styles.navigationMenu}>
-            <a href="#projects" className={styles.navigationItem}>
-              Projetos
-            </a>
-            <a href="#contact" className={styles.navigationItem}>
-              Contato
-            </a>
+          {/* <div className={styles.verticalLine}></div> */}
+          <nav className={styles.navigation}>
+            <div className={styles.navigationMenu}>
+              <a href="#projects" className={styles.navigationItem}>
+                <span>Projetos</span>
+              </a>
+              <a href="#contact" className={styles.navigationItem}>
+                <span>Contato</span>
+              </a>
+            </div>
             <div className={styles.iconContainer}>
               <a href="https://github.com/KrindgesJuliano">
                 <FiGithub color="white" size={30} />

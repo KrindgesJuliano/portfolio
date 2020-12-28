@@ -4,21 +4,21 @@ import React from "react";
 import styles from "./styles.module.css";
 
 interface Props {
-  imgSrc?: string;
+  imgSrc: string;
+  Title?: string;
 }
 
-const ProjectCard = ({ imgSrc }: Props) => {
+const ProjectCard = ({ imgSrc, Title }: Props) => {
   return (
-    <a href="#" className={styles.link}>
-      <div className={styles.imgContainer}>
-        <img
-          src={require("../../../public/home_hero.jpg")}
-          alt="código java script"
-          width="500px"
-          className={styles.img}
-        />
-      </div>
-    </a>
+    <div className={styles.imgContainer}>
+      <img
+        src={imgSrc}
+        alt={Title}
+        width="200px"
+        height="300px"
+        className={styles.img}
+      />
+    </div>
   );
 };
 

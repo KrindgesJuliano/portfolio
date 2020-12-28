@@ -1,12 +1,21 @@
-import styles from "../../styles/Home.module.css";
+import ContactSection from "@/components/ContactSection";
+import { GetServerSideProps, GetStaticProps } from "next";
+import { client } from "@/lib/prismic";
+import Prismic from "prismic-javascript";
+import { Document } from "prismic-javascript/types/documents";
 
 import Header from "../components/Header";
 import MainSection from "../components/MainSection";
 import ProjectSection from "@/components/ProjectSection";
 import SEO from "../components/SEO";
-import ContactSection from "@/components/ContactSection";
 
-export default function Home() {
+import styles from "../styles/Home.module.css";
+
+interface Props {
+  projects: Document[];
+}
+
+export default function Home({ projects }: Props) {
   return (
     <div className={styles.container}>
       <SEO
@@ -18,7 +27,7 @@ export default function Home() {
       <Header />
       <main className={styles.main}>
         <MainSection />
-        <ProjectSection />
+        <ProjectSection projects={projects} />
         <ContactSection />
       </main>
 
@@ -28,3 +37,15 @@ export default function Home() {
     </div>
   );
 }
+
+export const getServerSideProps: GetServerSideProps<Props> = async () => {
+  const projects = await client().query([
+    Prismic.Predicates.at("document.type", "projetos"),
+  ]);
+
+  return {
+    props: {
+      projects: projects ? projects.results : [],
+    },
+  };
+};

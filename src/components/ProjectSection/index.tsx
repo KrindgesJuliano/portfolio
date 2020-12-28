@@ -1,13 +1,18 @@
 import React from "react";
+import { Document } from "prismic-javascript/types/documents";
+
 import { FiChevronRight } from "react-icons/fi";
+import Link from "next/link";
 
 import styles from "./styles.module.css";
 import SectionLayout from "../SectionLayout";
 import ProjectCard from "../ProjectCard";
 
-interface Props {}
+interface Props {
+  projects: Document[];
+}
 
-export const ProjectSection = (props: Props) => {
+export const ProjectSection = ({ projects }: Props) => {
   return (
     <SectionLayout className={styles.section}>
       <div className={styles.background} id="projects">
@@ -15,10 +20,20 @@ export const ProjectSection = (props: Props) => {
         <div className={styles.sectionContainer}>
           <h2 className={styles.sectionTitle}>Projetos</h2>
           <div className={styles.projectsGrid}>
-            <ProjectCard imgSrc="/home_hero.jpg" />
-            <ProjectCard imgSrc="/home_hero.jpg" />
-            <ProjectCard imgSrc="/home_hero.jpg" />
-            <ProjectCard imgSrc="/home_hero.jpg" />
+            {projects.map((projects) => {
+              console.log(projects);
+              return (
+                <div key={projects.id}>
+                  <Link href={`/projects/${projects.uid}`}>
+                    <a>
+                      <ProjectCard
+                        imgSrc={projects.data.thumbnail.preview.url}
+                      />
+                    </a>
+                  </Link>
+                </div>
+              );
+            })}
           </div>
           <div className={styles.seeMore}>
             <a href="#">Veja Mais</a>

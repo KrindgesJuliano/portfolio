@@ -1,0 +1,54 @@
+.container {
+  max-width: 70rem;
+  margin: 6rem auto;
+  min-height: 100vh;
+}
+
+.main {
+  margin-top: 2rem;
+  border-radius: 8px;
+  background-color: white;
+  height: 100%;
+  overflow: hidden;
+}
+.imgCover {
+  object-fit: cover;
+  height: 20rem;
+}
+
+.title {
+  text-align: center;
+  font-weight: 700;
+  height: 4rem;
+  flex-wrap: wrap;
+}
+.articleBody {
+  padding: 0 5rem;
+  text-indent: 2rem;
+  line-height: 2rem;
+  font-size: 1rem;
+  text-align: justify;
+}
+
+.articleBody p {
+  text-align: justify;
+}
+
+.linkSection {
+  display: flex;
+  height: 10rem;
+  justify-content: center;
+  border-top: 1px solid #6b778d;
+}
+
+.googlePlay {
+  max-width: 20rem;
+  align-self: center;
+}
+
+/* loading page */
+
+.loadingMessage {
+  display: flex;
+  margin: 0 auto;
+}
