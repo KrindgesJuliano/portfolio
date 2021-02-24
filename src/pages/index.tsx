@@ -1,15 +1,15 @@
-import ContactSection from "@/components/ContactSection";
-import { GetStaticProps } from "next";
-import { client } from "@/lib/prismic";
-import Prismic from "prismic-javascript";
-import { Document } from "prismic-javascript/types/documents";
+import ContactSection from '@/components/ContactSection';
+import { GetStaticProps } from 'next';
+import { client } from '@/lib/prismic';
+import Prismic from 'prismic-javascript';
+import { Document } from 'prismic-javascript/types/documents';
 
-import Header from "../components/Header";
-import MainSection from "../components/MainSection";
-import ProjectSection from "@/components/ProjectSection";
-import SEO from "../components/SEO";
+import Header from '../components/Header';
+import MainSection from '../components/MainSection';
+import ProjectSection from '@/components/ProjectSection';
+import SEO from '../components/SEO';
 
-import styles from "../styles/Home.module.css";
+import styles from '../styles/Home.module.css';
 
 interface Props {
   projects: Document[];
@@ -40,7 +40,7 @@ export default function Home({ projects }: Props) {
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const projects = await client().query([
-    Prismic.Predicates.at("document.type", "projetos"),
+    Prismic.Predicates.at('document.type', 'projetos'),
   ]);
 
   return {

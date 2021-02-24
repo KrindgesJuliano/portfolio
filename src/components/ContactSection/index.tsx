@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from "react";
-import SectionLayout from "../SectionLayout";
+import React, { useState, useEffect } from 'react';
+import SectionLayout from '../SectionLayout';
 
-import { FiArrowRight, FiPhone, FiMail, FiMapPin } from "react-icons/fi";
+import { FiArrowRight, FiPhone, FiMail, FiMapPin } from 'react-icons/fi';
 
-import styles from "./styles.module.css";
+import styles from './styles.module.css';
 
 interface Props {}
 
 const ContactSection = (props: Props) => {
   const [success, setSuccess] = useState(false);
   useEffect(() => {
-    if (window.location.search.includes("success=true")) {
+    if (window.location.search.includes('success=true')) {
       setSuccess(true);
     }
   }, []);
@@ -63,13 +63,13 @@ const ContactSection = (props: Props) => {
               </p>
             </form>
             {success && (
-              <p style={{ color: "green" }}>Successfully submitted form!</p>
+              <p style={{ color: 'green' }}>Successfully submitted form!</p>
             )}
           </div>
           <div className={styles.contactInfo}>
             <p>
               <FiMail size={18} style={{ margin: 10 }} />
-              julianokrindges@gmail.com
+              contato@julianokrindges.tech
             </p>
             <p>
               <FiPhone size={18} style={{ margin: 10 }} />
