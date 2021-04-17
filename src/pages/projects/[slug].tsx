@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { GetStaticPaths, GetStaticProps } from "next";
 import PrismicDOM from "prismic-dom";
 import { Client } from '../../lib/prismic'
+import Prismic from 'prismic-javascript';
 
 import Header from "../../components/Header";
 import styles from "../../styles/projectPost.module.css";
@@ -87,8 +88,17 @@ export const getStaticProps: GetStaticProps<ProjectsProps> = async (
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
+  const projects = await Client().query([
+    Prismic.Predicates.at('document.type', 'projetos'),
+  ]);
+
+  const paths = projects.results.map(post =>(
+    {params: {slug: String(post.uid)}}
+  ) )
+  console.log(paths)
+  
   return {
-    paths: [],
-    fallback: true,
+    paths,
+    fallback: false,
   };
 };
