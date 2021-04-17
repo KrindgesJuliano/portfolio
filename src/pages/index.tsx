@@ -1,6 +1,6 @@
 import ContactSection from '@/components/ContactSection';
 import { GetStaticProps } from 'next';
-import { client } from '@/lib/prismic';
+import { Client } from '@/lib/prismic';
 import Prismic from 'prismic-javascript';
 import { Document } from 'prismic-javascript/types/documents';
 
@@ -39,7 +39,7 @@ export default function Home({ projects }: Props) {
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const projects = await client().query([
+  const projects = await Client().query([
     Prismic.Predicates.at('document.type', 'projetos'),
   ]);
 

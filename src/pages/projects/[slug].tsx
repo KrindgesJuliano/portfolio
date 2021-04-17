@@ -1,8 +1,8 @@
 import { Document } from "prismic-javascript/types/documents";
 import { useRouter } from "next/router";
 import { GetStaticPaths, GetStaticProps } from "next";
-import { client } from "@/lib/prismic";
 import PrismicDOM from "prismic-dom";
+import { Client } from '../../lib/prismic'
 
 import Header from "../../components/Header";
 import styles from "../../styles/projectPost.module.css";
@@ -19,9 +19,12 @@ export default function Projects({ project }: ProjectsProps) {
     return <p className={styles.loadingMessage}>Carregando...</p>;
   }
 
+
   const image = project.data.thumbnail.url;
   const link = project.data.projectlink.url;
   const goToGooglePlayImg = "/google-play-badge.png";
+
+  console.log(project.data.category.uid)
 
   return (
     <div>
@@ -47,7 +50,7 @@ export default function Projects({ project }: ProjectsProps) {
           <div className={styles.linkSection}>
             {
               (project.data.category.uid =
-                "mobile" && link ? (
+                'mobile' && link ? (
                   <a href={link}>
                     <img
                       src={goToGooglePlayImg}
@@ -68,11 +71,12 @@ export default function Projects({ project }: ProjectsProps) {
 }
 
 export const getStaticProps: GetStaticProps<ProjectsProps> = async (
-  context
+  {params}
+  
 ) => {
-  const { slug } = context.params;
+  const { slug } = params;
 
-  const project = await client().getByUID("projetos", String(slug), {});
+  const project = await Client().getByUID("projetos", String(slug), {});
 
   return {
     props: {
@@ -85,6 +89,6 @@ export const getStaticProps: GetStaticProps<ProjectsProps> = async (
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [],
-    fallback: false,
+    fallback: true,
   };
 };

@@ -1,8 +1,8 @@
-import Prismic from "prismic-javascript";
+import Prismic from "@prismicio/client";
 
 export const apiEndpoint = "https://portfoliokrindges.cdn.prismic.io/api/v2";
 
-export const client = (req = null) => {
+export const Client = (req = null) => {
   const options = req ? { req } : null;
   return Prismic.client(apiEndpoint, options);
 };

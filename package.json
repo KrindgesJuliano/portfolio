@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@prismicio/client": "^4.0.0",
     "dotenv": "^8.2.0",
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-optipng": "^8.0.0",

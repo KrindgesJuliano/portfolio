@@ -21,10 +21,10 @@ export const ProjectSection = ({ projects }: Props) => {
           <h2 className={styles.sectionTitle}>Projetos</h2>
           <div className={styles.projectsGrid}>
             {projects.map((projects) => {
-              console.log(projects);
+              const slug = projects.uid
               return (
                 <div key={projects.id}>
-                  <Link href={`/projects/${projects.uid}`}>
+                  <Link as={`/projects/${slug}`} href="/projects/[slug]">
                     <a>
                       <ProjectCard
                         imgSrc={projects.data.thumbnail.preview.url}
