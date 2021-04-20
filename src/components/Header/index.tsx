@@ -13,13 +13,11 @@ export default function Header({ style: userStyles = {}, className }: Props) {
   return (
     <header style={userStyles} className={classNames}>
       <div className={styles.container}>
-        <div>
-          <h2 className={styles.logo}>
+          <h2 className={`${styles.logo} flex justify-center `}>
             <Link href={`/`}>
-              <a className={styles.linkLogo}>Juliano Krindges</a>
+              <a className={`${styles.linkLogo} self-center text-2xl hover:text-white`}>Juliano Krindges</a>
             </Link>
           </h2>
-        </div>
         <div className={styles.iconContainer}>
           <a href="https://github.com/KrindgesJuliano">
             <FiGithub color="white" size={30} />
@@ -28,7 +26,7 @@ export default function Header({ style: userStyles = {}, className }: Props) {
             <FiLinkedin color="white" size={30} />
           </a>
           <a href="https://codepen.io/Falt">
-            <FiCodepen color="white" size={30} />
+            <FiCodepen color="white" className={`hover:text-red`} size={30} />
           </a>
         </div>
       </div>

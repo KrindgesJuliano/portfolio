@@ -1,12 +1,12 @@
-import React from "react";
-import { Document } from "prismic-javascript/types/documents";
+import React from 'react';
+import { Document } from 'prismic-javascript/types/documents';
 
-import { FiChevronRight } from "react-icons/fi";
-import Link from "next/link";
+import { FiChevronRight } from 'react-icons/fi';
+import Link from 'next/link';
 
-import styles from "./styles.module.css";
-import SectionLayout from "../SectionLayout";
-import ProjectCard from "../ProjectCard";
+import styles from './styles.module.css';
+import SectionLayout from '../SectionLayout';
+import ProjectCard from '../ProjectCard';
 
 interface Props {
   projects: Document[];
@@ -14,14 +14,14 @@ interface Props {
 
 export const ProjectSection = ({ projects }: Props) => {
   return (
-    <SectionLayout className={styles.section}>
+    <SectionLayout className={`${styles.section}`}>
       <div className={styles.background} id="projects">
         <div className={styles.backgroundGeometry}></div>
         <div className={styles.sectionContainer}>
-          <h2 className={styles.sectionTitle}>Projetos</h2>
+          <h2 className={`${styles.sectionTitle} my-4`}>Portfólio</h2>
           <div className={styles.projectsGrid}>
             {projects.map((projects) => {
-              const slug = projects.uid
+              const slug = projects.uid;
               return (
                 <div key={projects.id}>
                   <Link as={`/projects/${slug}`} href="/projects/[slug]">

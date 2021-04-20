@@ -21,9 +21,11 @@
   font-weight: 700;
   height: 4rem;
   flex-wrap: wrap;
+  font-size: 2rem;
+  padding: 1rem 0;
 }
 .articleBody {
-  padding: 0 5rem;
+  padding: 1rem 5rem;
   text-indent: 2rem;
   line-height: 2rem;
   font-size: 1rem;
