@@ -9,6 +9,14 @@ interface Props {}
 
 const ContactSection = (props: Props) => {
   const [success, setSuccess] = useState(false);
+  const [submitText, setSubmitText] = useState(null);
+
+  const onSubmit = async (event, setSubmitText) => {
+    event.preventDefault();
+    setSubmitText('Submitting ...');
+    debugger;
+  };
+
   useEffect(() => {
     if (window.location.search.includes('success=true')) {
       setSuccess(true);
@@ -25,16 +33,25 @@ const ContactSection = (props: Props) => {
               name="contact"
               method="POST"
               data-netlify="true"
+              netlify-honeypot="bot-field"
               action="/?success=true"
+              onSubmit={(e) => onSubmit(e, setSubmitText)}
+              className={`w-96 my-auto`}
             >
+              <p className="hidden">
+                <label>
+                  Don’t fill this out if you’re human:{' '}
+                  <input name="bot-field" />
+                </label>
+              </p>
               <input type="hidden" name="form-contact" value="contact" />
-              <p>
+              <p className={`w-full`}>
                 <input
                   type="text"
                   id="name"
                   name="name"
                   placeholder="Nome"
-                  className={styles.formInput}
+                  className={`${styles.formInput}`}
                 />
               </p>
               <p>
@@ -43,7 +60,7 @@ const ContactSection = (props: Props) => {
                   id="email"
                   name="email"
                   placeholder="e-mail"
-                  className={styles.formInput}
+                  className={`${styles.formInput}`}
                 />
               </p>
               <p>
@@ -53,11 +70,11 @@ const ContactSection = (props: Props) => {
                   placeholder="Mensagem"
                   rows={10}
                   cols={30}
-                  className={styles.formInputMsg}
+                  className={`${styles.formInputMsg} `}
                 ></textarea>
               </p>
               <p>
-                <button type="submit" className={styles.submitButton}>
+                <button type="submit" className={`${styles.submitButton}`}>
                   Enviar Mensagem <FiArrowRight />
                 </button>
               </p>
