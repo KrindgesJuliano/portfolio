@@ -44,17 +44,18 @@ const ContactSection = (props: Props) => {
         <div className={styles.contactContainer}>
           <div className={styles.formContainer}>
             <form
+              name="contact"
               netlify-honeypot="bot-field"
               onSubmit={handleSubmit}
               className={`w-96 my-auto`}
             >
-              <p className="hidden">
+              <p className={`hidden`}>
                 <label>
                   Don’t fill this out if you’re human:{' '}
                   <input name="bot-field" />
                 </label>
               </p>
-              <input type="hidden" name="form-contact" value="contact" />
+              <input type="hidden" name="form-name" value="contact" />
               <p className={`w-full`}>
                 <input
                   type="text"
