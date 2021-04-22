@@ -63,6 +63,10 @@
   outline: none;
 }
 
+.hidden {
+  display: none;
+}
+
 .submitButton {
   width: min(25rem, 98%);
   height: 2.5rem;

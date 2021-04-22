@@ -9,12 +9,15 @@ interface Props {}
 
 const ContactSection = (props: Props) => {
   const [success, setSuccess] = useState(false);
-  const [submitText, setSubmitText] = useState(null);
+  const [submitText, setSubmitText] = useState(false);
 
   const onSubmit = async (event, setSubmitText) => {
     event.preventDefault();
-    setSubmitText('Submitting ...');
+    setSubmitText(true);
     debugger;
+    if (success) {
+      setSubmitText(false);
+    }
   };
 
   useEffect(() => {
@@ -78,10 +81,11 @@ const ContactSection = (props: Props) => {
                   Enviar Mensagem <FiArrowRight />
                 </button>
               </p>
+              {success && (
+                <p style={{ color: 'green' }}>Successfully submitted form!</p>
+              )}
+              {submitText && <p style={{ color: 'green' }}>Submitting ...</p>}
             </form>
-            {success && (
-              <p style={{ color: 'green' }}>Successfully submitted form!</p>
-            )}
           </div>
           <div className={styles.contactInfo}>
             <p>
