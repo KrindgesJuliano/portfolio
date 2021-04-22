@@ -24,6 +24,7 @@ const ContactSection = (props: Props) => {
   const [formData, setFormData] = useReducer(formReducer, {});
   const [success, setSuccess] = useState(false);
 
+  console.log(formData);
   const handleSubmit = (e) => {
     fetch('/', {
       method: 'POST',
@@ -43,9 +44,6 @@ const ContactSection = (props: Props) => {
         <div className={styles.contactContainer}>
           <div className={styles.formContainer}>
             <form
-              name="contact"
-              method="POST"
-              data-netlify="true"
               netlify-honeypot="bot-field"
               onSubmit={handleSubmit}
               className={`w-96 my-auto`}
