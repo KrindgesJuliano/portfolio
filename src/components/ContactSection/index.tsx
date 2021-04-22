@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useReducer } from 'react';
 import SectionLayout from '../SectionLayout';
 
 import { FiArrowRight, FiPhone, FiMail, FiMapPin } from 'react-icons/fi';
@@ -7,24 +7,34 @@ import styles from './styles.module.css';
 
 interface Props {}
 
-const ContactSection = (props: Props) => {
-  const [success, setSuccess] = useState(false);
-  const [submitText, setSubmitText] = useState(false);
+const encode = (data) => {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&');
+};
 
-  const onSubmit = async (event, setSubmitText) => {
-    event.preventDefault();
-    setSubmitText(true);
-    debugger;
-    if (success) {
-      setSubmitText(false);
-    }
+const formReducer = (state, event) => {
+  return {
+    ...state,
+    [event.target.name]: event.target.value,
   };
+};
 
-  useEffect(() => {
-    if (window.location.search.includes('success=true')) {
-      setSuccess(true);
-    }
-  }, []);
+const ContactSection = (props: Props) => {
+  const [formData, setFormData] = useReducer(formReducer, {});
+  const [success, setSuccess] = useState(false);
+
+  const handleSubmit = (e) => {
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'contact', formData }),
+    })
+      .then(() => setSuccess(true))
+      .catch((error) => console.log(error));
+
+    e.preventDefault();
+  };
 
   return (
     <SectionLayout className={styles.section}>
@@ -37,8 +47,7 @@ const ContactSection = (props: Props) => {
               method="POST"
               data-netlify="true"
               netlify-honeypot="bot-field"
-              action="/?success=true"
-              onSubmit={(e) => onSubmit(e, setSubmitText)}
+              onSubmit={handleSubmit}
               className={`w-96 my-auto`}
             >
               <p className="hidden">
@@ -54,6 +63,7 @@ const ContactSection = (props: Props) => {
                   id="name"
                   name="name"
                   placeholder="Nome"
+                  onChange={setFormData}
                   className={`${styles.formInput}`}
                 />
               </p>
@@ -63,6 +73,7 @@ const ContactSection = (props: Props) => {
                   id="email"
                   name="email"
                   placeholder="e-mail"
+                  onChange={setFormData}
                   className={`${styles.formInput}`}
                 />
               </p>
@@ -73,18 +84,20 @@ const ContactSection = (props: Props) => {
                   placeholder="Mensagem"
                   rows={10}
                   cols={30}
+                  onChange={setFormData}
                   className={`${styles.formInputMsg} `}
                 ></textarea>
               </p>
               <p>
-                <button type="submit" className={`${styles.submitButton}`}>
+                <button type="submit" className={`${styles.submitButton} mt-4`}>
                   Enviar Mensagem <FiArrowRight />
                 </button>
               </p>
               {success && (
-                <p style={{ color: 'green' }}>Successfully submitted form!</p>
+                <p className={`text-green-600 text-center`}>
+                  Mensagem enviada com sucesso
+                </p>
               )}
-              {submitText && <p style={{ color: 'green' }}>Submitting ...</p>}
             </form>
           </div>
           <div className={styles.contactInfo}>
